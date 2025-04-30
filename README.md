@@ -1,12 +1,32 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Counter App using React, following best practices with useState, useEffect, and props. The application uses Tailwind CSS for styling and Lucide React icons for visual elements. The code is clean, modular, and reusable.
 
-Currently, two official plugins are available:
+![](/public/Screenshot_30-4-2025_21933_localhost.jpeg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sample Code
 
-## Expanding the ESLint configuration
+```
+import React from "react";
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+const CounterHistory = ({ history, onRestore }) => {
+  return (
+    <div>
+      <h2 className="text-xl font-bold mt-4">Counter History:</h2>
+      <ul className="flex gap-2 overflow-x-auto whitespace-nowrap">
+        {history.map((value, index) => (
+          <li
+            key={index}
+            className="bg-gray-700 px-2 py-1 rounded-md cursor-pointer hover:bg-gray-600"
+            onClick={() => onRestore(value)}
+          >
+            {value}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default CounterHistory;
+```
