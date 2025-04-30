@@ -27,7 +27,7 @@ const Counter = ({ count, onCountChange }) => {
     }
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className={`p-4 rounded-lg text-4xl font-bold ${bgColor}`}>
+      <div className={`select-none p-4 rounded-lg text-4xl font-bold ${bgColor}`}>
         {count}
       </div>
       <div className="flex gap-4">
